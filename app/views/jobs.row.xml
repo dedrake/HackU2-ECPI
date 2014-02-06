@@ -1,0 +1,11 @@
+<Alloy>
+	<TableViewRow id="jobrow">
+		<View class="rowcontainer">
+			<ImageView id="jobthumb"/>
+			<View class="textcontainer">
+				<Label id="jobtitle">placeholder</Label>
+				<Label id="jobsummary">placeholder</Label>
+			</View>
+		</View>
+	</TableViewRow>
+</Alloy>
