@@ -1,6 +1,7 @@
 <Alloy>
 	<Window class="container">
-		<Button id="backButton"/>
+		<Button id="backButton" onClick="goBack"/>
+		<Button id="submitApplication"/>
 		<ScrollView id="scrollView">
 			<View id="detailView">
 				<Label id="title">palceholder</Label>
@@ -9,7 +10,7 @@
 				<Label id="city">palceholder</Label>
 				<Label id="state">palceholder</Label>
 				<Label id="zip">palceholder</Label>
-				<Label id="description">palceholder</Label>
+				<WebView id="description"></WebView>
 			</View>
 		</ScrollView>
 	</Window>
