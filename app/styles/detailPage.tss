@@ -1,4 +1,7 @@
-
+"Label": {
+	left: "0",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+},
 ".container" : {
   backgroundColor: "white",
   top: "20dp"
@@ -10,9 +13,18 @@
 	width: "120dp",
 	title: "Back"
 },
+"#submitApplication" : {
+	top: "0",
+	right: "0",
+	width: "120dp",
+	title: "Apply"
+},
 "#scrollView" : {
-	top: "44dp"
+	top: "44dp",
+	width: "320dp"
 },
 "#detailView" : {
-	layout: "vertical"
+	layout: "vertical",
+	left: "10dp",
+	width: "310dp"
 }

@@ -6,4 +6,8 @@ $.posted_at.text=args.posted_at;
 $.city.text=args.city;
 $.state.text=args.state;
 $.zip.text=args.zip;
-$.description.text=args.description;
+$.description.setHtml('<html><body>' + args.description + '</body></html>');
+
+function goBack(event) {
+    $.detailPage.close();
+}
