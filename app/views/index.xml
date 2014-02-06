@@ -1,5 +1,7 @@
 <Alloy>
 	<Window id="home" class="container">
-		<TableView id="jobslist" />
+		<View id="content">
+			<TableView id="jobslist" onClick="rowClick"/>
+		</View>
 	</Window>
 </Alloy>

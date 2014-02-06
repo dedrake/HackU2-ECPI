@@ -5,4 +5,7 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	color: "#000"
-} 
+},
+"#content" : {
+	top: "20dp"
+}

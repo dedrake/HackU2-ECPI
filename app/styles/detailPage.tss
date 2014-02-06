@@ -1,0 +1,18 @@
+
+".container" : {
+  backgroundColor: "white",
+  top: "20dp"
+}, 
+"#backButton" : {
+	top: "0",
+	left: "0",
+	height: "44dp",
+	width: "120dp",
+	title: "Back"
+},
+"#scrollView" : {
+	top: "44dp"
+},
+"#detailView" : {
+	layout: "vertical"
+}
