@@ -1,0 +1,16 @@
+<Alloy>
+	<Window class="container">
+		<Button id="backButton"/>
+		<ScrollView id="scrollView">
+			<View id="detailView">
+				<Label id="title">palceholder</Label>
+				<Label id="employer_name">palceholder</Label>
+				<Label id="posted_at">palceholder</Label>
+				<Label id="city">palceholder</Label>
+				<Label id="state">palceholder</Label>
+				<Label id="zip">palceholder</Label>
+				<Label id="description">palceholder</Label>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>
