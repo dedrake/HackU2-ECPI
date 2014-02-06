@@ -11,3 +11,9 @@ $.description.setHtml('<html><body>' + args.description + '</body></html>');
 function goBack(event) {
     $.detailPage.close();
 }
+
+function apply(event) {
+    var captchaController;
+    captchaController = Alloy.createController('captcha', args);
+    captchaController.getView().open();
+}

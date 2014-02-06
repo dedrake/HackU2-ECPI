@@ -2,6 +2,11 @@ function Controller() {
     function goBack() {
         $.detailPage.close();
     }
+    function apply() {
+        var captchaController;
+        captchaController = Alloy.createController("captcha", args);
+        captchaController.getView().open();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "detailPage";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -34,6 +39,7 @@ function Controller() {
         id: "submitApplication"
     });
     $.__views.detailPage.add($.__views.submitApplication);
+    apply ? $.__views.submitApplication.addEventListener("click", apply) : __defers["$.__views.submitApplication!click!apply"] = true;
     $.__views.scrollView = Ti.UI.createScrollView({
         top: "44dp",
         width: "320dp",
@@ -104,6 +110,7 @@ function Controller() {
     $.zip.text = args.zip;
     $.description.setHtml("<html><body>" + args.description + "</body></html>");
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
+    __defers["$.__views.submitApplication!click!apply"] && $.__views.submitApplication.addEventListener("click", apply);
     _.extend($, exports);
 }
 
