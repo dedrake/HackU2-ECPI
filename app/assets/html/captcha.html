@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Registration Form with Draggable Capture</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <style type="text/css">
             body{
-                background-color: #a2a2a2;
+                background-color: #ffffff;
             }
             form.registration{
                 width:290px;
@@ -28,9 +28,9 @@
             }
             form.registration legend{
                 text-align:center;
-                color:#fff;
+                color:#000000;
                 font-size:14px;
-                padding:0px 4px 10px 4px;
+                padding:0px 5px 10px 4px;
                 margin-left:10px;
                 font-weight:bold;
             }
@@ -42,7 +42,7 @@
                 clear:left;
                 margin:4px 4px 0px 0px;
                 padding:0px;
-                color: #FFF;
+                color: #fff;
                 text-shadow: 0 1px 1px rgba(0,0,0,0.8);
             }
             form.registration input{
@@ -123,24 +123,21 @@
             }
 			input[type="range"]{
 			-webkit-appearance: none;
-			background-image: url("images/volume-empty.png");
-			background-repeat: no-repeat;
+			background-image: url("images/slider.png");
 			background-size:cover;
-			width: 300px;
-			height: 35px;
+			float:left;
 			}
 			input[type="range"]::-webkit-slider-thumb {
 			-webkit-appearance: none;
-			background-image: url("images/volume-knob.png");
+			background-image: url("images/slider_button_inactive.png");
 			background-repeat: no-repeat;
-	
 			width: 35px;
 			height: 30px;
 			}
         </style>
     </head>
     <body>
-        <form name="myForm" class="registration" onsubmit="return validateForm();" method="post">
+        <form name="myform" class="registration" method="post">
             <fieldset>
                 <legend>About you</legend>
                 <label>First name</label>
@@ -152,53 +149,111 @@
             </fieldset>
             <fieldset>
 			<label>Phone number</label>
-                <input type="text" maxlength="100" value="" name="phone"/>
+                <input type="text" maxlength="100" value="" name="phonename"/>
                 <legend>Contact info</legend>
                 <label>E-Mail</label>
-                <input type="text" maxlength="120" value="" name="email"/>
+                <input type="text" maxlength="120" value="" name="emailname"/>
            
             </fieldset>
-           
-		   <fieldset>
-		   <legend>Drag slider until images changes</legend>
-		   
-	<img id="happy" style="margin:25px" align="center"src="images/Smiley_Sad.png"/>
+           <legend style="margin-left:44px; padding:5px;">Drag slider until images changes</legend>
+		<fieldset> 
+		<table>
+			<tr>
+				<td colspan="2">
+					<img id="happy" valign="bottom" align="left"  height="60" width="60" src="images/Sad_face.png"/>
+
+				</td>
+				<td>
+					<label>Move slider to change the face to </label>
+					<label id="face"></label>
+				</td>
+				<td>
 	
-<input id="in" type="range" min="0" max="10000" value="0" step="1" onchange="showValue(this.value)" />
+				</td>
+			</tr>
 
-<input type="button" value="Verify"  onclick="validateForm(); boolChecker();"/>
+		</table>
+		<br>
 
+			<input id="in" type="range" min="0" max="10000" value="0" step="1"  onchange="showValue(this.value)" />
+
+			<input id="send" type="button" value="Submit"  name="send"onclick="validateForm()"/>
+		</fieldset>
+		<fieldset>
+		<legend>Created by ECPI Students</legend>
+		<img id="logo" style="width: 75%" src="images/emoticaptcha_logo.png"/>
+		</fieldset>
 <script type="text/javascript">
 
-document.getElementById('in').value = 0;
-	var random=Math.floor((Math.random()*9000)+1000);
-	
+	document.getElementById('in').value = 0;
+	var random=Math.floor((Math.random()*8000)+1000);
+	var round=Math.floor(random/1000);
 	var checker=false;
-
+	var face=new Array("Sad","Smiley","Pirate","Green","Skeleton","Lovey","Nerd","Purple","Devil");
+	var loop=0;
+	document.getElementById("face").innerHTML=face[round];
+	
 function showValue(slider)
 {
+	while(slider/1000>=loop){
+		document.getElementById("happy").src = "images/"+face[loop-1]+"_face.png";
+		if(slider<1000||slider==10000)
+		document.getElementById("happy").src = "images/Sad_face.png";
+		loop++
+	}
+	loop=0;
 
-    if(slider>=random-999 &&slider<random+999){
-		document.getElementById("happy").src = "images/Smiley_Happy.png";
-	
+    if(Math.floor(slider/1000)==round+1){
 		checker=true;}
 	else{
-		document.getElementById("happy").src = "images/Smiley_Sad.png";
-		
 		checker=false;}
 }
+
 function boolChecker(){
 if (checker == true){
-alert("You are human");
+//alert("Successful selection");
+sendEmail();
 }
 else if (checker == false){
-alert("Go home robot, your drunk!!!!");
+alert("Incorrect selection");
 }
 }
+</script>
+<script type="text/javascript">
+
+
+function sendEmail() {
+var email = document.forms["myform"]["emailname"].value;
+var fullname = document.forms["myform"]["fname"].value+document.forms["myform"]["lname"].value;
+$.ajax({
+  type: "POST",
+  url: "https://mandrillapp.com/api/1.0/messages/send.json",
+  data: {
+    "key": "6oUW6tWjRMxpdSw8QQITHA",
+    "message": {
+      "from_email": "employmentguide@de.com",
+      "to": [
+          {
+            "email": email,
+            "name": fullname,
+            "type": "to"
+          }
+			],
+      "autotext": "true",
+      "subject": "Confirmation email from EmploymentGuide.com",
+      "html": "Your contact information was submitted sucessfully. We also hope you enjoyed the new captcha!"
+    }
+  }
+ }).done(function(response) {
+	Ti.App.fireEvent('formComplete', {
+		emailSent: true
+	}); // if you're into that sorta thing
+ });
+ }
 
 function validateForm()
 {
-var x=document.forms["myForm"]["email"].value;
+var x=document.forms["myform"]["emailname"].value;
 var atpos=x.indexOf("@");
 var dotpos=x.lastIndexOf(".");
 if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
@@ -207,20 +262,20 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
  	return;
 
   }
-var z=document.forms["myForm"]["fname"].value;
+var z=document.forms["myform"]["fname"].value;
 if (z==null || z=="")
   {
   alert("First name must be filled out");
  	return;
   }
-  var y=document.forms["myForm"]["lname"].value;
+  var y=document.forms["myform"]["lname"].value;
 if (y==null || y=="")
   {
   alert("Last name must be filled out");
  	return;
  
   }
- var w=document.forms["myForm"]["phone"].value;
+ var w=document.forms["myform"]["phonename"].value;
 if (w==null || w=="")
   {
   alert("Phone number must be filled out");
@@ -228,10 +283,12 @@ if (w==null || w=="")
  
   }
   
- Ti.App.fireEvent('formComplete');
+  boolChecker();
 }
 function cancel() {
-	Ti.App.fireEvent('formComplete');
+	Ti.App.fireEvent('formComplete', {
+		emailSent: false
+	});
 }
 </script>
 

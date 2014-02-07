@@ -14,6 +14,7 @@ function Controller() {
     $.__views.__alloyId0 = Ti.UI.createView({
         height: "70",
         layout: "horizontal",
+        horizontalWrap: false,
         id: "__alloyId0"
     });
     $.__views.jobrow.add($.__views.__alloyId0);
