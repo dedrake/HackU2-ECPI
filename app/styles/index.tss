@@ -17,6 +17,6 @@
 	top: "30dp",
 	left: "90dp",
 	height: "44dp",
-	width: "120dp",
-	title: "Start My Search!"
+	width: "160dp",
+	title: "Show Local Jobs!"
 }

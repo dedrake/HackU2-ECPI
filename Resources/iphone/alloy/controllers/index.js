@@ -33,8 +33,8 @@ function Controller() {
         top: "30dp",
         left: "90dp",
         height: "44dp",
-        width: "120dp",
-        title: "Start My Search!",
+        width: "160dp",
+        title: "Show Local Jobs!",
         id: "startSearch"
     });
     $.__views.welcome.add($.__views.startSearch);
@@ -52,10 +52,8 @@ function Controller() {
         longitude: null
     };
     Titanium.Geolocation.getCurrentPosition(function(e) {
-        alert(e);
         coordinates.latitude = e.coords.latitude;
         coordinates.longitude = e.coords.longitude;
-        alert(coordinates);
     });
     $.home.open();
     __defers["$.__views.startSearch!click!startClick"] && $.__views.startSearch.addEventListener("click", startClick);
