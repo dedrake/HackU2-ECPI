@@ -11,7 +11,16 @@
 					<Label id="state">palceholder</Label>
 					<Label id="zip">palceholder</Label>
 					<Label id="sendIcon"></Label>
-				<WebView id="description"></WebView>
+				<WebView id="description">
+				android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:gravity="center"
+			    android:text="Materials"
+			    android:textAppearance="?android:attr/textAppearanceLarge"
+			    android:textColor="#FDEE03"
+			    android:textSize="25dp"
+			    android:textStyle="bold|normal"
+			    android:typeface="serif" /></WebView>
 			</View>
 		</ScrollView>
 	</Window>
