@@ -3,7 +3,7 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
 },
 ".container" : {
-  backgroundColor: "white",
+  backgroundColor: "8cacb7",
   top: "20dp"
 }, 
 "#backButton" : {
@@ -22,6 +22,8 @@
 "#scrollView" : {
 	top: "44dp",
 	width: "320dp"
+	backgroundColor: "8cacb7",
+	font: {fontFamily: 'Arial', fontSize:'16dp' }
 },
 "#detailView" : {
 	layout: "vertical",
