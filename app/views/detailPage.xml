@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<Button id="backButton" onClick="goBack"/>
-		<Button id="submitApplication"/>
+		<Button id="submitApplication" onClick="apply"/>
 		<ScrollView id="scrollView">
 			<View id="detailView">
 					<Label id="title">palceholder</Label>

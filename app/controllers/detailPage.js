@@ -13,3 +13,9 @@ $.sendIcon.text=icons.glass;
 function goBack(event) {
     $.detailPage.close();
 }
+
+function apply(event) {
+    var captchaController;
+    captchaController = Alloy.createController('captcha', args);
+    captchaController.getView().open();
+}

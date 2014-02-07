@@ -1,0 +1,16 @@
+"#captchaWebView" : {
+	width: "320dp",
+	backgroundColor: "#a2a2a2"
+}, 
+"#backButton" : {
+	top: "20dp",
+	left: "0",
+	width: "120dp",
+	title: "Back"
+},
+"#container" : {
+	top: "44dp"
+},
+"#win" : {
+	backgroundColor: "#a2a2a2"
+}
