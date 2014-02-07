@@ -23,7 +23,7 @@
 	top: "44dp",
 	width: "320dp",
 	backgroundColor: "8cacb7",
-	font: {fontFamily: 'Arial', fontSize:'16dp' }
+	font: {font: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif fontSize:'16dp' }
 },
 "#detailView" : {
 	layout: "vertical",
@@ -32,7 +32,7 @@
 },
 "#description" : {
 	backgroundColor: "8cacb7",
-	font: {fontFamily: 'Arial', fontSize:'16dp' }
+	font: {font: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif fontSize:'16dp' }
 },
 "#sendIcon":{
 	font: {fontFamily: 'AppIcons', fontSize:'24dp' }
