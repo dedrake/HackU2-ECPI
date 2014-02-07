@@ -20,7 +20,12 @@ $.title.text=args.title;
 $.employerName.text=args.employer_name;
 $.postedAt.text="Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
 $.location.text=args.city + ", " + args.state + ", " + args.zip;
-$.description.setHtml('<html><body>' + args.description + '</body></html>');
+$.description.setHtml('<html>' +
+'<head></head>' +
+	'<body>' +
+	args.description +
+	'</body>' +
+'</html>');
 
 function goBack(event) {
     $.detailPage.close();

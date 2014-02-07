@@ -112,6 +112,8 @@ function Controller() {
     $.__views.detailView.add($.__views.location);
     $.__views.description = Ti.UI.createWebView({
         backgroundColor: "white",
+        width: "310dp",
+        left: 0,
         font: {
             fontFamily: "arial",
             fontSize: "16dp",
@@ -142,7 +144,7 @@ function Controller() {
     $.employerName.text = args.employer_name;
     $.postedAt.text = "Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
     $.location.text = args.city + ", " + args.state + ", " + args.zip;
-    $.description.setHtml("<html><body>" + args.description + "</body></html>");
+    $.description.setHtml("<html><head></head><body>" + args.description + "</body>" + "</html>");
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
     __defers["$.__views.submitApplication!click!apply"] && $.__views.submitApplication.addEventListener("click", apply);
     _.extend($, exports);

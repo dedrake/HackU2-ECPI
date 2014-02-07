@@ -26,11 +26,11 @@ var onSucces=function(data){
 		rows.push(row);
 	});
 	$.jobslist.data=rows;
-}
+};
 
 var onError=function(error){
 	console.log(error);
-}
+};
 
 function rowClick(event){
 	Alloy.createController('detailPage', parsedData[event.index]).getView().open();

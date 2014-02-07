@@ -15,4 +15,4 @@ exports.getTableData=function(url,onSucces,onError){
 	client.open("GET", url);
 	// Send the request.
 	client.send();
-}
+};
