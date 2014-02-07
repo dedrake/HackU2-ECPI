@@ -15,7 +15,7 @@
 },
 "#startSearch" : {
 	top: "30dp",
-	left: "80dp",
+	left: "90dp",
 	height: "44dp",
 	width: "120dp",
 	title: "Start My Search!"

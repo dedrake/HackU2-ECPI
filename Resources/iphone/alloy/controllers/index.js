@@ -31,7 +31,7 @@ function Controller() {
     $.__views.welcome.add($.__views.__alloyId0);
     $.__views.startSearch = Ti.UI.createButton({
         top: "30dp",
-        left: "80dp",
+        left: "90dp",
         height: "44dp",
         width: "120dp",
         title: "Start My Search!",
@@ -39,6 +39,12 @@ function Controller() {
     });
     $.__views.welcome.add($.__views.startSearch);
     startClick ? $.__views.startSearch.addEventListener("click", startClick) : __defers["$.__views.startSearch!click!startClick"] = true;
+    $.__views.__alloyId1 = Ti.UI.createImageView({
+        image: "/images/emoticaptcha_logo.png",
+        bottom: "20dp",
+        id: "__alloyId1"
+    });
+    $.__views.home.add($.__views.__alloyId1);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.home.open();
