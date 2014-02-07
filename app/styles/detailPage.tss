@@ -23,16 +23,19 @@
 	top: "44dp",
 	width: "320dp",
 	backgroundColor: "8cacb7",
-	font: {fontFamily: 'Arial', fontSize:'16dp' }
+	font: {fontFamily: 'arial', fontSize:'16dp' }
 },
 "#detailView" : {
 	layout: "vertical",
 	left: "10dp",
-	width: "310dp"
+	width: "310dp",
+	backgroundColor: "8cacb7",
+	font: {fontFamily: 'arial', fontSize:'16dp' }
+
 },
 "#description" : {
 	backgroundColor: "8cacb7",
-	font: {fontFamily: 'Arial', fontSize:'16dp' }
+	font: {fontFamily: 'arial', fontSize:'16dp' }
 },
 "#sendIcon":{
 	font: {fontFamily: 'AppIcons', fontSize:'24dp' }
