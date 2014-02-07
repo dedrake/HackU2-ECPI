@@ -3,7 +3,7 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
 },
 ".container" : {
-  backgroundColor: "8cacb7",
+  backgroundColor: "white",
   top: "20dp"
 }, 
 "#backButton" : {
@@ -22,19 +22,19 @@
 "#scrollView" : {
 	top: "44dp",
 	width: "320dp",
-	backgroundColor: "8cacb7",
+	backgroundColor: "white",
 	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
 "#detailView" : {
 	layout: "vertical",
 	left: "10dp",
 	width: "310dp",
-	backgroundColor: "8cacb7",
+	backgroundColor: "white",
 	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 
 },
 "#description" : {
-	backgroundColor: "8cacb7",
+	backgroundColor: "white",
 	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
 "#sendIcon":{

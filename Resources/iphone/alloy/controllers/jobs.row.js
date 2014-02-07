@@ -57,7 +57,8 @@ function Controller() {
         width: Ti.UI.FILL,
         color: "#000",
         font: {
-            fontSize: "12"
+            fontSize: "12",
+            fontWeight: "bold"
         },
         left: "5",
         text: "placeholder",
