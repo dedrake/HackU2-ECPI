@@ -21,7 +21,7 @@
 },
 "#scrollView" : {
 	top: "44dp",
-	width: "320dp"
+	width: "320dp",
 	backgroundColor: "8cacb7",
 	font: {fontFamily: 'Arial', fontSize:'16dp' }
 },
@@ -32,7 +32,7 @@
 },
 "#description" : {
 	backgroundColor: "8cacb7",
-	font: {fontFamily" 'Arial', fontSize:'16dp' }
+	font: {fontFamily: 'Arial', fontSize:'16dp' }
 },
 "#sendIcon":{
 	font: {fontFamily: 'AppIcons', fontSize:'24dp' }

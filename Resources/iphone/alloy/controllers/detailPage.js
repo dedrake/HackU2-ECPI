@@ -16,7 +16,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.detailPage = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "8cacb7",
         top: "20dp",
         id: "detailPage"
     });
@@ -43,6 +43,11 @@ function Controller() {
     $.__views.scrollView = Ti.UI.createScrollView({
         top: "44dp",
         width: "320dp",
+        backgroundColor: "8cacb7",
+        font: {
+            fontFamily: "Arial",
+            fontSize: "16dp"
+        },
         id: "scrollView"
     });
     $.__views.detailPage.add($.__views.scrollView);
@@ -106,6 +111,11 @@ function Controller() {
     });
     $.__views.detailView.add($.__views.sendIcon);
     $.__views.description = Ti.UI.createWebView({
+        backgroundColor: "8cacb7",
+        font: {
+            fontFamily: "Arial",
+            fontSize: "16dp"
+        },
         id: "description"
     });
     $.__views.detailView.add($.__views.description);
