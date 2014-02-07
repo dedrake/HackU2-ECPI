@@ -23,7 +23,7 @@
 	top: "44dp",
 	width: "320dp",
 	backgroundColor: "8cacb7",
-	font: {font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif,
+	font: {fontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif,
 	fontSize:'16dp' }
 },
 "#detailView" : {
@@ -33,7 +33,7 @@
 },
 "#description" : {
 	backgroundColor: "8cacb7",
-	font: {font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif,
+	font: {fontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif,
 	fontSize:'16dp' }
 },
 "#sendIcon":{
