@@ -54,7 +54,7 @@ function Controller() {
     $.__views.detailPage.add($.__views.scrollView);
     $.__views.detailView = Ti.UI.createView({
         layout: "vertical",
-        left: "10dp",
+        left: "5dp",
         width: "310dp",
         backgroundColor: "white",
         font: {
@@ -65,55 +65,70 @@ function Controller() {
         id: "detailView"
     });
     $.__views.scrollView.add($.__views.detailView);
+    $.__views.detailHead = Ti.UI.createView({
+        borderWidth: "0.5dp",
+        height: Ti.UI.SIZE,
+        layout: "vertical",
+        width: "300dp",
+        borderRadius: "5%",
+        left: "5dp",
+        backgroundColor: "#f0f4f6",
+        id: "detailHead"
+    });
+    $.__views.detailView.add($.__views.detailHead);
     $.__views.title = Ti.UI.createLabel({
-        left: "0",
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontSize: "13dp",
+            fontSize: "16dp",
             fontWeight: "bold"
         },
+        right: "5dp",
+        top: "5dp",
         text: "palceholder",
         id: "title"
     });
-    $.__views.detailView.add($.__views.title);
+    $.__views.detailHead.add($.__views.title);
     $.__views.employerName = Ti.UI.createLabel({
-        left: "0",
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontSize: "11dp",
+            fontSize: "14dp",
             fontColor: "#f0f4f6"
         },
+        right: "5dp",
         text: "palceholder",
         id: "employerName"
     });
-    $.__views.detailView.add($.__views.employerName);
+    $.__views.detailHead.add($.__views.employerName);
     $.__views.postedAt = Ti.UI.createLabel({
-        left: "0",
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontSize: "12dp",
+            fontSize: "13dp",
             fontColor: "#f0f4f6",
             fontStyle: "italic"
         },
+        right: "5dp",
         text: "palceholder",
         id: "postedAt"
     });
-    $.__views.detailView.add($.__views.postedAt);
+    $.__views.detailHead.add($.__views.postedAt);
     $.__views.location = Ti.UI.createLabel({
-        left: "0",
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontSize: "11dp",
+            fontSize: "13dp",
             fontColor: "#f0f4f6"
         },
+        right: "5dp",
+        bottom: "5dp",
         text: "palceholder",
         id: "location"
     });
-    $.__views.detailView.add($.__views.location);
+    $.__views.detailHead.add($.__views.location);
     $.__views.description = Ti.UI.createWebView({
         backgroundColor: "white",
-        width: "310dp",
-        left: 0,
         font: {
             fontFamily: "arial",
             fontSize: "16dp",
@@ -144,7 +159,7 @@ function Controller() {
     $.employerName.text = args.employer_name;
     $.postedAt.text = "Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
     $.location.text = args.city + ", " + args.state + ", " + args.zip;
-    $.description.setHtml("<html><head></head><body>" + args.description + "</body>" + "</html>");
+    $.description.setHtml('<html><head><style type="text/css">body{background-color: #ffff;font-family: "Arial";font-size: "10px";width: "320px";left: "0"; }</style></head><body>' + args.description + "</body>" + "</html>");
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
     __defers["$.__views.submitApplication!click!apply"] && $.__views.submitApplication.addEventListener("click", apply);
     _.extend($, exports);

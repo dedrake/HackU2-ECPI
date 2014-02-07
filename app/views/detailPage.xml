@@ -4,10 +4,12 @@
 		<Button id="submitApplication" onClick="apply"/>
 		<ScrollView id="scrollView">
 			<View id="detailView">
+				<View id="detailHead">
 					<Label id="title">palceholder</Label>
 					<Label id="employerName">palceholder</Label>
 					<Label id="postedAt">palceholder</Label>
 					<Label id="location">palceholder</Label>
+				</View>
 				<WebView id="description"></WebView>
 			</View>
 		</ScrollView>

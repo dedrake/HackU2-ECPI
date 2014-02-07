@@ -32,7 +32,7 @@ function Controller() {
         height: "50dp",
         backgroundColor: "#f0f4f6",
         borderRadius: "5%",
-        borderWidth: "1dp",
+        borderWidth: "0.5dp",
         id: "monthDay"
     });
     $.__views.jobthumb.add($.__views.monthDay);

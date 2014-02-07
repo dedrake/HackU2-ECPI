@@ -27,11 +27,10 @@
 },
 "#detailView" : {
 	layout: "vertical",
-	left: "10dp",
+	left: "5dp",
 	width: "310dp",
 	backgroundColor: "white",
 	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
-
 },
 "#description" : {
 	backgroundColor: "white",
@@ -39,26 +38,45 @@
 },
 "#title":{
 	font:{
-		fontSize: "13dp",
+		fontSize: "16dp",
 		fontWeight: "bold"
-	}
+	},
+	left: "5dp",
+	right: "5dp",
+	top: "5dp"
 },
 "#employerName":{
 	font:{
-		fontSize: "11dp",
+		fontSize: "14dp",
 		fontColor: "#f0f4f6"
-	}
+	},
+	left: "5dp",
+	right: "5dp"
 },
 "#postedAt":{
 	font:{
-		fontSize: "12dp",
+		fontSize: "13dp",
 		fontColor: "#f0f4f6",
 		fontStyle: "italic"
-	}
+	},
+	left: "5dp",
+	right: "5dp"
 },
 "#location":{
 	font:{
-		fontSize: "11dp",
+		fontSize: "13dp",
 		fontColor: "#f0f4f6"
-	}
+	},
+	left: "5dp",
+	right: "5dp",
+	bottom: "5dp"
+},
+"#detailHead":{
+	borderWidth: "0.5dp",
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	width: "300dp",
+	borderRadius: "5%",
+	left: "5dp",
+	backgroundColor: "#f0f4f6"
 }

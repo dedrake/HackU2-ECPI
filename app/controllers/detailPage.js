@@ -21,7 +21,17 @@ $.employerName.text=args.employer_name;
 $.postedAt.text="Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
 $.location.text=args.city + ", " + args.state + ", " + args.zip;
 $.description.setHtml('<html>' +
-'<head></head>' +
+	'<head>'+
+		'<style type="text/css">'+
+            'body{'+
+                'background-color: #ffff;'+
+                'font-family: "Arial";'+
+                'font-size: "10px";'+
+                'width: "320px";'+
+                'left: "0";'+ 
+           ' }'+
+        '</style>'+
+	'</head>' +
 	'<body>' +
 	args.description +
 	'</body>' +
