@@ -1,20 +1,23 @@
 ".rowcontainer":{
-	 height:"90"
+	 height:"70",
+	 layout: "horizontal"
 }
 
 ".textcontainer":{
 	layout: "vertical",
-	left:"90",
+	left:"5",
 	top:"5",
-	right: "5"
+	right: "15",
+	bottom: "5"
 }
 
 
 "#jobthumb":{
 	left:"5",
 	top:"5",
-	width:"80",
-	height:"80"
+	bottom: "5",
+	width:"70dp",
+	layout: "vertical"
 } 
 
 
@@ -23,7 +26,8 @@
 	color: "#000",
 	font:{
 		fontSize: "12"
-	}
+	},
+	left:"5",
 }
 
 "#jobsummary":{
@@ -31,5 +35,19 @@
 	color: "#6D6D6D",
 	font:{
 		fontSize: "11"
-	}
+	},
+	left:"5",
+}
+
+"#monthDay":{
+	 layout: "vertical",
+	 width: "50dp",
+	 height: "50dp",
+	 backgroundColor: "#f0f4f6",
+	 borderRadius: "5%",
+	 borderWidth: "1dp"
+}
+
+"#jobrow": {
+	hasChild: true
 }

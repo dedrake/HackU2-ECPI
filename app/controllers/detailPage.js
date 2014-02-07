@@ -1,3 +1,4 @@
+var icons=require('icons');
 var args = arguments[0] || {};
 
 $.title.text=args.title;
@@ -7,6 +8,7 @@ $.city.text=args.city;
 $.state.text=args.state;
 $.zip.text=args.zip;
 $.description.setHtml('<html><body>' + args.description + '</body></html>');
+$.sendIcon.text=icons.glass;
 
 function goBack(event) {
     $.detailPage.close();

@@ -1,7 +1,12 @@
 <Alloy>
 	<TableViewRow id="jobrow">
 		<View class="rowcontainer">
-			<ImageView id="jobthumb"/>
+			<View id="jobthumb">
+				<View id="monthDay">
+					<Label id="month"></Label>
+					<Label id="day"></Label>
+				</View>
+			</View>
 			<View class="textcontainer">
 				<Label id="jobtitle">placeholder</Label>
 				<Label id="jobsummary">placeholder</Label>

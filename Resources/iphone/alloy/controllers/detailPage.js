@@ -89,12 +89,23 @@ function Controller() {
         id: "zip"
     });
     $.__views.detailView.add($.__views.zip);
+    $.__views.sendIcon = Ti.UI.createLabel({
+        left: "0",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontFamily: "AppIcons",
+            fontSize: "24dp"
+        },
+        id: "sendIcon"
+    });
+    $.__views.detailView.add($.__views.sendIcon);
     $.__views.description = Ti.UI.createWebView({
         id: "description"
     });
     $.__views.detailView.add($.__views.description);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var icons = require("icons");
     var args = arguments[0] || {};
     $.title.text = args.title;
     $.employer_name.text = args.employer_name;
@@ -103,6 +114,7 @@ function Controller() {
     $.state.text = args.state;
     $.zip.text = args.zip;
     $.description.setHtml("<html><body>" + args.description + "</body></html>");
+    $.sendIcon.text = icons.glass;
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
     _.extend($, exports);
 }

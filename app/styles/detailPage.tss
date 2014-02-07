@@ -27,4 +27,7 @@
 	layout: "vertical",
 	left: "10dp",
 	width: "310dp"
+},
+"#sendIcon":{
+	font: {fontFamily: 'AppIcons', fontSize:'24dp' }
 }
