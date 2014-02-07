@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="jobsIndex" class="container">
+		<View id="content">
+			<TableView id="jobslist" onClick="rowClick"/>
+		</View>
+	</Window>
+</Alloy>

@@ -11,13 +11,13 @@ function Controller() {
         id: "jobrow"
     });
     $.__views.jobrow && $.addTopLevelView($.__views.jobrow);
-    $.__views.__alloyId0 = Ti.UI.createView({
+    $.__views.__alloyId1 = Ti.UI.createView({
         height: "70",
         layout: "horizontal",
         horizontalWrap: false,
-        id: "__alloyId0"
+        id: "__alloyId1"
     });
-    $.__views.jobrow.add($.__views.__alloyId0);
+    $.__views.jobrow.add($.__views.__alloyId1);
     $.__views.jobthumb = Ti.UI.createView({
         left: "5",
         top: "5",
@@ -26,7 +26,7 @@ function Controller() {
         layout: "vertical",
         id: "jobthumb"
     });
-    $.__views.__alloyId0.add($.__views.jobthumb);
+    $.__views.__alloyId1.add($.__views.jobthumb);
     $.__views.monthDay = Ti.UI.createView({
         layout: "vertical",
         width: "50dp",
@@ -45,15 +45,15 @@ function Controller() {
         id: "day"
     });
     $.__views.monthDay.add($.__views.day);
-    $.__views.__alloyId1 = Ti.UI.createView({
+    $.__views.__alloyId2 = Ti.UI.createView({
         layout: "vertical",
         left: "5",
         top: "5",
         right: "15",
         bottom: "5",
-        id: "__alloyId1"
+        id: "__alloyId2"
     });
-    $.__views.__alloyId0.add($.__views.__alloyId1);
+    $.__views.__alloyId1.add($.__views.__alloyId2);
     $.__views.jobtitle = Ti.UI.createLabel({
         width: Ti.UI.FILL,
         color: "#000",
@@ -65,7 +65,7 @@ function Controller() {
         text: "placeholder",
         id: "jobtitle"
     });
-    $.__views.__alloyId1.add($.__views.jobtitle);
+    $.__views.__alloyId2.add($.__views.jobtitle);
     $.__views.jobsummary = Ti.UI.createLabel({
         width: Ti.UI.FILL,
         color: "#6D6D6D",
@@ -76,7 +76,7 @@ function Controller() {
         text: "placeholder",
         id: "jobsummary"
     });
-    $.__views.__alloyId1.add($.__views.jobsummary);
+    $.__views.__alloyId2.add($.__views.jobsummary);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

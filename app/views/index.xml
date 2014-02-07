@@ -1,7 +1,8 @@
 <Alloy>
 	<Window id="home" class="container">
-		<View id="content">
-			<TableView id="jobslist" onClick="rowClick"/>
+		<View id="welcome">
+			<Label>Welcome to Emoticaptcha!</Label>
+			<Label id="startSearch" onClick="startClick">Start My Search!</Label>
 		</View>
 	</Window>
 </Alloy>

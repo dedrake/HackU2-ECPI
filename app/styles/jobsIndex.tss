@@ -8,8 +8,4 @@
 },
 "#content" : {
 	top: "20dp"
-},
-"#welcome":{
-	top: "60dp",
-	layout: "vertical"
 }
