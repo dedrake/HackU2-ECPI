@@ -16,7 +16,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.detailPage = Ti.UI.createWindow({
-        backgroundColor: "8cacb7",
+        backgroundColor: "white",
         top: "20dp",
         id: "detailPage"
     });
@@ -43,18 +43,11 @@ function Controller() {
     $.__views.scrollView = Ti.UI.createScrollView({
         top: "44dp",
         width: "320dp",
-<<<<<<< HEAD
         backgroundColor: "white",
         font: {
             fontFamily: "arial",
             fontSize: "16dp",
             fontColor: "04212b"
-=======
-        backgroundColor: "#8cacb7",
-        font: {
-            fontFamily: "Arial",
-            fontSize: "16dp"
->>>>>>> Forms Page Update
         },
         id: "scrollView"
     });

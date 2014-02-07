@@ -160,21 +160,28 @@
 		   <fieldset>
 		   <legend>Drag slider until images changes</legend>
 		   
-	<p>Make the face the</p>
-	<span id="face"></span>
-	<span id="face3"></span>
-	
-	<img id="happy" style="margin:25px" valign="bottom" align="center"src="images/Sad_face.png"/>
-	<input id="in" type="range" min="0" max="10000" value="0" step="1" onchange="showValue(this.value)" />
-	<input id="send" type="button" value="Submit"  name="send" onclick="validateForm()"/>
+			<label>Move slider to change the face to </label>
+			<label id="face"></label>
+			<br>
+			<span id="face3"></span>
 
+			<img id="happy" valign="bottom" align="left"  height="60" width="60" src="images/Sad_face.png"/>
+
+			<input id="in" type="range" min="0" max="10000" value="0" step="1"  onchange="showValue(this.value)" />
+
+			<input id="send" type="button" value="Submit"  name="send"onclick="validateForm()"/>
+		</fieldset>
+		<fieldset>
+		<legend>Created by ECPI Students</legend>
+		<img id="logo" style="width: 75%" src="images/emoticaptcha_logo.png"/>
+		</fieldset>
 <script type="text/javascript">
 
 	document.getElementById('in').value = 0;
 	var random=Math.floor((Math.random()*8000)+1000);
 	var round=Math.floor(random/1000);
 	var checker=false;
-	var face=new Array("Sad","Smiley","Pirate","Green","Skeleton","Lovey","Nerd","O","Devil");
+	var face=new Array("Sad","Smiley","Pirate","Green","Skeleton","Lovey","Nerd","Purple","Devil");
 	var loop=0;
 	document.getElementById("face").innerHTML=face[round];
 	
@@ -196,11 +203,11 @@ function showValue(slider)
 
 function boolChecker(){
 if (checker == true){
-alert("You are human");
+alert("Successful selection");
 sendEmail();
 }
 else if (checker == false){
-alert("Go home robot, your drunk!!!!");
+alert("Incorrect selection");
 }
 }
 </script>
@@ -210,6 +217,7 @@ alert("Go home robot, your drunk!!!!");
 function sendEmail() {
 var email = document.forms["myform"]["emailname"].value;
 var fullname = document.forms["myform"]["fname"].value+document.forms["myform"]["lname"].value;
+alert('Sending email!');
 $.ajax({
   type: "POST",
   url: "https://mandrillapp.com/api/1.0/messages/send.json",
@@ -230,13 +238,13 @@ $.ajax({
     }
   }
  }).done(function(response) {
-   console.log(response); // if you're into that sorta thing
+   Ti.API.info(response); // if you're into that sorta thing
  });
  }
 
 function validateForm()
 {
-var x=document.forms["myForm"]["email"].value;
+var x=document.forms["myForm"]["emailname"].value;
 var atpos=x.indexOf("@");
 var dotpos=x.lastIndexOf(".");
 if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
@@ -258,7 +266,7 @@ if (y==null || y=="")
  	return;
  
   }
- var w=document.forms["myForm"]["phone"].value;
+ var w=document.forms["myForm"]["phonename"].value;
 if (w==null || w=="")
   {
   alert("Phone number must be filled out");
@@ -267,7 +275,6 @@ if (w==null || w=="")
   }
   
   boolChecker();
- Ti.App.fireEvent('formComplete');
 }
 function cancel() {
 	Ti.App.fireEvent('formComplete');
