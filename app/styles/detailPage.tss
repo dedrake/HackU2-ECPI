@@ -37,6 +37,28 @@
 	backgroundColor: "white",
 	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
-"#sendIcon":{
-	font: {fontFamily: 'AppIcons', fontSize:'24dp', fontColor: "04212b"}
+"#title":{
+	font:{
+		fontSize: "13dp",
+		fontWeight: "bold"
+	}
+},
+"#employerName":{
+	font:{
+		fontSize: "11dp",
+		fontColor: "#f0f4f6"
+	}
+},
+"#postedAt":{
+	font:{
+		fontSize: "12dp",
+		fontColor: "#f0f4f6",
+		fontStyle: "italic"
+	}
+},
+"#location":{
+	font:{
+		fontSize: "11dp",
+		fontColor: "#f0f4f6"
+	}
 }

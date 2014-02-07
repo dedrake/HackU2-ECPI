@@ -68,56 +68,48 @@ function Controller() {
     $.__views.title = Ti.UI.createLabel({
         left: "0",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "13dp",
+            fontWeight: "bold"
+        },
         text: "palceholder",
         id: "title"
     });
     $.__views.detailView.add($.__views.title);
-    $.__views.employer_name = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "employer_name"
-    });
-    $.__views.detailView.add($.__views.employer_name);
-    $.__views.posted_at = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "posted_at"
-    });
-    $.__views.detailView.add($.__views.posted_at);
-    $.__views.city = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "city"
-    });
-    $.__views.detailView.add($.__views.city);
-    $.__views.state = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "state"
-    });
-    $.__views.detailView.add($.__views.state);
-    $.__views.zip = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "zip"
-    });
-    $.__views.detailView.add($.__views.zip);
-    $.__views.sendIcon = Ti.UI.createLabel({
+    $.__views.employerName = Ti.UI.createLabel({
         left: "0",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontFamily: "AppIcons",
-            fontSize: "24dp",
-            fontColor: "04212b"
+            fontSize: "11dp",
+            fontColor: "#f0f4f6"
         },
-        id: "sendIcon"
+        text: "palceholder",
+        id: "employerName"
     });
-    $.__views.detailView.add($.__views.sendIcon);
+    $.__views.detailView.add($.__views.employerName);
+    $.__views.postedAt = Ti.UI.createLabel({
+        left: "0",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "12dp",
+            fontColor: "#f0f4f6",
+            fontStyle: "italic"
+        },
+        text: "palceholder",
+        id: "postedAt"
+    });
+    $.__views.detailView.add($.__views.postedAt);
+    $.__views.location = Ti.UI.createLabel({
+        left: "0",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "11dp",
+            fontColor: "#f0f4f6"
+        },
+        text: "palceholder",
+        id: "location"
+    });
+    $.__views.detailView.add($.__views.location);
     $.__views.description = Ti.UI.createWebView({
         backgroundColor: "white",
         font: {
@@ -130,16 +122,27 @@ function Controller() {
     $.__views.detailView.add($.__views.description);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var icons = require("icons");
+    require("icons");
     var args = arguments[0] || {};
+    var posted = new Date(args.posted_at);
+    var months = new Array();
+    months[0] = "January";
+    months[1] = "February";
+    months[2] = "March";
+    months[3] = "April";
+    months[4] = "May";
+    months[5] = "June";
+    months[6] = "July";
+    months[7] = "August";
+    months[8] = "September";
+    months[9] = "October";
+    months[10] = "November";
+    months[11] = "December";
     $.title.text = args.title;
-    $.employer_name.text = args.employer_name;
-    $.posted_at.text = args.posted_at;
-    $.city.text = args.city;
-    $.state.text = args.state;
-    $.zip.text = args.zip;
+    $.employerName.text = args.employer_name;
+    $.postedAt.text = "Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
+    $.location.text = args.city + ", " + args.state + ", " + args.zip;
     $.description.setHtml("<html><body>" + args.description + "</body></html>");
-    $.sendIcon.text = icons.glass;
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
     __defers["$.__views.submitApplication!click!apply"] && $.__views.submitApplication.addEventListener("click", apply);
     _.extend($, exports);
