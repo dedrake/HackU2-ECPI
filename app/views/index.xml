@@ -2,7 +2,7 @@
 	<Window id="home" class="container">
 		<View id="welcome">
 			<Label>Welcome to Emoticaptcha!</Label>
-			<Label id="startSearch" onClick="startClick">Start My Search!</Label>
+			<Button id="startSearch" onClick="startClick" />
 		</View>
 	</Window>
 </Alloy>

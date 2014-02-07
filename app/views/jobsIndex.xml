@@ -1,6 +1,7 @@
 <Alloy>
 	<Window id="jobsIndex" class="container">
 		<View id="content">
+			<Button id="backButton" onClick="goBack"/>
 			<TableView id="jobslist" onClick="rowClick"/>
 		</View>
 	</Window>

@@ -29,11 +29,12 @@ function Controller() {
         id: "__alloyId0"
     });
     $.__views.welcome.add($.__views.__alloyId0);
-    $.__views.startSearch = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        text: "Start My Search!",
+    $.__views.startSearch = Ti.UI.createButton({
+        top: "30dp",
+        left: "80dp",
+        height: "44dp",
+        width: "120dp",
+        title: "Start My Search!",
         id: "startSearch"
     });
     $.__views.welcome.add($.__views.startSearch);

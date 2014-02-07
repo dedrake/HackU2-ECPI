@@ -7,5 +7,13 @@
 	color: "#000"
 },
 "#content" : {
-	top: "20dp"
+	top: "20dp",
+	layout: "vertical"
+}, 
+"#backButton" : {
+	top: "0",
+	left: "0",
+	height: "44dp",
+	width: "120dp",
+	title: "Back"
 }
