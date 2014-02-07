@@ -30,6 +30,10 @@
 	left: "10dp",
 	width: "310dp"
 },
+"#description" : {
+	backgroundColor: "8cacb7",
+	font: {fontFamily" 'Arial', fontSize:'16dp' }
+},
 "#sendIcon":{
 	font: {fontFamily: 'AppIcons', fontSize:'24dp' }
 }
