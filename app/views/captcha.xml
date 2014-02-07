@@ -2,7 +2,7 @@
 	<Window id="win">
 		<Button id="backButton" onClick="goBack">
 		<View id="container">
-			<WebView id="captchaWebView" url="html/captcha.html"/>
+			<WebView id="captchaWebView" url="/html/captcha.html"/>
 		</View>
 	</Window>
 </Alloy>
