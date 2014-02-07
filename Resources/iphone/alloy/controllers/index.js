@@ -1,6 +1,6 @@
 function Controller() {
     function startClick() {
-        Alloy.createController("jobsIndex").getView().open();
+        Alloy.createController("jobsIndex", coordinates).getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -47,6 +47,16 @@ function Controller() {
     $.__views.home.add($.__views.__alloyId1);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var coordinates = {
+        latitude: null,
+        longitude: null
+    };
+    Titanium.Geolocation.getCurrentPosition(function(e) {
+        alert(e);
+        coordinates.latitude = e.coords.latitude;
+        coordinates.longitude = e.coords.longitude;
+        alert(coordinates);
+    });
     $.home.open();
     __defers["$.__views.startSearch!click!startClick"] && $.__views.startSearch.addEventListener("click", startClick);
     _.extend($, exports);

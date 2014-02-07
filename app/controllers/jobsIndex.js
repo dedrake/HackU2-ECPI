@@ -42,7 +42,7 @@ function goBack(event) {
     $.jobsIndex.close();
 }
 
-var dataURL="https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION&page=2";
+var dataURL="https://quasar-9.herokuapp.com/api/v1/job_postings/in_radius?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=EG&lat="+args.latitude+"&lng="+args.longitude+"&radius=50";
 var data=quasarlib.getTableData(dataURL,onSucces,onError);
 
 $.jobsIndex.open();
