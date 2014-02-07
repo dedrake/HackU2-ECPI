@@ -1,6 +1,7 @@
 ".rowcontainer":{
 	 height:"70",
-	 layout: "horizontal"
+	 layout: "horizontal",
+	 horizontalWrap: false
 }
 
 ".textcontainer":{
