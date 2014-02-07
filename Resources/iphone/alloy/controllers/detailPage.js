@@ -43,84 +43,123 @@ function Controller() {
     $.__views.scrollView = Ti.UI.createScrollView({
         top: "44dp",
         width: "320dp",
+        backgroundColor: "white",
+        font: {
+            fontFamily: "arial",
+            fontSize: "16dp",
+            fontColor: "04212b"
+        },
         id: "scrollView"
     });
     $.__views.detailPage.add($.__views.scrollView);
     $.__views.detailView = Ti.UI.createView({
         layout: "vertical",
-        left: "10dp",
+        left: "5dp",
         width: "310dp",
+        backgroundColor: "white",
+        font: {
+            fontFamily: "arial",
+            fontSize: "16dp",
+            fontColor: "04212b"
+        },
         id: "detailView"
     });
     $.__views.scrollView.add($.__views.detailView);
+    $.__views.detailHead = Ti.UI.createView({
+        borderWidth: "0.5dp",
+        height: Ti.UI.SIZE,
+        layout: "vertical",
+        width: "300dp",
+        borderRadius: "5%",
+        left: "5dp",
+        backgroundColor: "#f0f4f6",
+        id: "detailHead"
+    });
+    $.__views.detailView.add($.__views.detailHead);
     $.__views.title = Ti.UI.createLabel({
-        left: "0",
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "16dp",
+            fontWeight: "bold"
+        },
+        right: "5dp",
+        top: "5dp",
         text: "palceholder",
         id: "title"
     });
-    $.__views.detailView.add($.__views.title);
-    $.__views.employer_name = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "employer_name"
-    });
-    $.__views.detailView.add($.__views.employer_name);
-    $.__views.posted_at = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "posted_at"
-    });
-    $.__views.detailView.add($.__views.posted_at);
-    $.__views.city = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "city"
-    });
-    $.__views.detailView.add($.__views.city);
-    $.__views.state = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "state"
-    });
-    $.__views.detailView.add($.__views.state);
-    $.__views.zip = Ti.UI.createLabel({
-        left: "0",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-        text: "palceholder",
-        id: "zip"
-    });
-    $.__views.detailView.add($.__views.zip);
-    $.__views.sendIcon = Ti.UI.createLabel({
-        left: "0",
+    $.__views.detailHead.add($.__views.title);
+    $.__views.employerName = Ti.UI.createLabel({
+        left: "5dp",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
-            fontFamily: "AppIcons",
-            fontSize: "24dp"
+            fontSize: "14dp",
+            fontColor: "#f0f4f6"
         },
-        id: "sendIcon"
+        right: "5dp",
+        text: "palceholder",
+        id: "employerName"
     });
-    $.__views.detailView.add($.__views.sendIcon);
+    $.__views.detailHead.add($.__views.employerName);
+    $.__views.postedAt = Ti.UI.createLabel({
+        left: "5dp",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "13dp",
+            fontColor: "#f0f4f6",
+            fontStyle: "italic"
+        },
+        right: "5dp",
+        text: "palceholder",
+        id: "postedAt"
+    });
+    $.__views.detailHead.add($.__views.postedAt);
+    $.__views.location = Ti.UI.createLabel({
+        left: "5dp",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        font: {
+            fontSize: "13dp",
+            fontColor: "#f0f4f6"
+        },
+        right: "5dp",
+        bottom: "5dp",
+        text: "palceholder",
+        id: "location"
+    });
+    $.__views.detailHead.add($.__views.location);
     $.__views.description = Ti.UI.createWebView({
+        backgroundColor: "white",
+        font: {
+            fontFamily: "arial",
+            fontSize: "16dp",
+            fontColor: "04212b"
+        },
         id: "description"
     });
     $.__views.detailView.add($.__views.description);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var icons = require("icons");
+    require("icons");
     var args = arguments[0] || {};
+    var posted = new Date(args.posted_at);
+    var months = new Array();
+    months[0] = "January";
+    months[1] = "February";
+    months[2] = "March";
+    months[3] = "April";
+    months[4] = "May";
+    months[5] = "June";
+    months[6] = "July";
+    months[7] = "August";
+    months[8] = "September";
+    months[9] = "October";
+    months[10] = "November";
+    months[11] = "December";
     $.title.text = args.title;
-    $.employer_name.text = args.employer_name;
-    $.posted_at.text = args.posted_at;
-    $.city.text = args.city;
-    $.state.text = args.state;
-    $.zip.text = args.zip;
-    $.description.setHtml("<html><body>" + args.description + "</body></html>");
-    $.sendIcon.text = icons.glass;
+    $.employerName.text = args.employer_name;
+    $.postedAt.text = "Posted: " + months[posted.getMonth()] + ", " + posted.getDay();
+    $.location.text = args.city + ", " + args.state + ", " + args.zip;
+    $.description.setHtml('<html><head><style type="text/css">body{background-color: #ffff;font-family: "Arial";font-size: "10px";width: "320px";left: "0"; }</style></head><body>' + args.description + "</body>" + "</html>");
     __defers["$.__views.backButton!click!goBack"] && $.__views.backButton.addEventListener("click", goBack);
     __defers["$.__views.submitApplication!click!apply"] && $.__views.submitApplication.addEventListener("click", apply);
     _.extend($, exports);

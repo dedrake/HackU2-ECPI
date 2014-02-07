@@ -3,7 +3,7 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
 },
 ".container" : {
-  backgroundColor: "8cacb7",
+  backgroundColor: "white",
   top: "20dp"
 }, 
 "#backButton" : {
@@ -21,15 +21,62 @@
 },
 "#scrollView" : {
 	top: "44dp",
-	width: "320dp"
-	backgroundColor: "8cacb7",
-	font: {fontFamily: 'Arial', fontSize:'16dp' }
+	width: "320dp",
+	backgroundColor: "white",
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
 "#detailView" : {
 	layout: "vertical",
-	left: "10dp",
-	width: "310dp"
+	left: "5dp",
+	width: "310dp",
+	backgroundColor: "white",
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
-"#sendIcon":{
-	font: {fontFamily: 'AppIcons', fontSize:'24dp' }
+"#description" : {
+	backgroundColor: "white",
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
+},
+"#title":{
+	font:{
+		fontSize: "16dp",
+		fontWeight: "bold"
+	},
+	left: "5dp",
+	right: "5dp",
+	top: "5dp"
+},
+"#employerName":{
+	font:{
+		fontSize: "14dp",
+		fontColor: "#f0f4f6"
+	},
+	left: "5dp",
+	right: "5dp"
+},
+"#postedAt":{
+	font:{
+		fontSize: "13dp",
+		fontColor: "#f0f4f6",
+		fontStyle: "italic"
+	},
+	left: "5dp",
+	right: "5dp"
+},
+"#location":{
+	font:{
+		fontSize: "13dp",
+		fontColor: "#f0f4f6"
+	},
+	left: "5dp",
+	right: "5dp",
+	bottom: "5dp"
+},
+"#detailHead":{
+	borderWidth: "0.5dp",
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	width: "300dp",
+	borderRadius: "5%",
+	left: "5dp",
+	backgroundColor: "#f0f4f6"
 }

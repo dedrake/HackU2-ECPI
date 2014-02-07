@@ -26,17 +26,17 @@ var onSucces=function(data){
 		rows.push(row);
 	});
 	$.jobslist.data=rows;
-}
+};
 
 var onError=function(error){
 	console.log(error);
-}
+};
 
 function rowClick(event){
 	Alloy.createController('detailPage', parsedData[event.index]).getView().open();
 }
 
-var dataURL="https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION";
+var dataURL="https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION&page=2";
 var data=quasarlib.getTableData(dataURL,onSucces,onError);
 
 $.home.open();

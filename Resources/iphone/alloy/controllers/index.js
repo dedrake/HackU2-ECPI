@@ -56,7 +56,7 @@ function Controller() {
     var onError = function(error) {
         console.log(error);
     };
-    var dataURL = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION";
+    var dataURL = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION&page=2";
     quasarlib.getTableData(dataURL, onSucces, onError);
     $.home.open();
     __defers["$.__views.jobslist!click!rowClick"] && $.__views.jobslist.addEventListener("click", rowClick);

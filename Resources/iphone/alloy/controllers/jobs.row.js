@@ -32,7 +32,7 @@ function Controller() {
         height: "50dp",
         backgroundColor: "#f0f4f6",
         borderRadius: "5%",
-        borderWidth: "1dp",
+        borderWidth: "0.5dp",
         id: "monthDay"
     });
     $.__views.jobthumb.add($.__views.monthDay);
@@ -57,7 +57,8 @@ function Controller() {
         width: Ti.UI.FILL,
         color: "#000",
         font: {
-            fontSize: "12"
+            fontSize: "12",
+            fontWeight: "bold"
         },
         left: "5",
         text: "placeholder",
