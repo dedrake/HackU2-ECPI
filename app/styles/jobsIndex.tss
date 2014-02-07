@@ -7,16 +7,13 @@
 	color: "#000"
 },
 "#content" : {
-	top: "20dp"
-},
-"#welcome":{
-	top: "60dp",
+	top: "20dp",
 	layout: "vertical"
-},
-"#startSearch" : {
-	top: "30dp",
-	left: "90dp",
+}, 
+"#backButton" : {
+	top: "0",
+	left: "0",
 	height: "44dp",
 	width: "120dp",
-	title: "Start My Search!"
+	title: "Back"
 }

@@ -1,6 +1,6 @@
 function Controller() {
-    function rowClick(event) {
-        Alloy.createController("detailPage", parsedData[event.index]).getView().open();
+    function startClick() {
+        Alloy.createController("jobsIndex").getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -15,51 +15,40 @@ function Controller() {
         id: "home"
     });
     $.__views.home && $.addTopLevelView($.__views.home);
-    $.__views.content = Ti.UI.createView({
-        top: "20dp",
-        id: "content"
+    $.__views.welcome = Ti.UI.createView({
+        top: "60dp",
+        layout: "vertical",
+        id: "welcome"
     });
-    $.__views.home.add($.__views.content);
-    $.__views.jobslist = Ti.UI.createTableView({
-        id: "jobslist"
+    $.__views.home.add($.__views.welcome);
+    $.__views.__alloyId0 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        text: "Welcome to Emoticaptcha!",
+        id: "__alloyId0"
     });
-    $.__views.content.add($.__views.jobslist);
-    rowClick ? $.__views.jobslist.addEventListener("click", rowClick) : __defers["$.__views.jobslist!click!rowClick"] = true;
+    $.__views.welcome.add($.__views.__alloyId0);
+    $.__views.startSearch = Ti.UI.createButton({
+        top: "30dp",
+        left: "90dp",
+        height: "44dp",
+        width: "120dp",
+        title: "Start My Search!",
+        id: "startSearch"
+    });
+    $.__views.welcome.add($.__views.startSearch);
+    startClick ? $.__views.startSearch.addEventListener("click", startClick) : __defers["$.__views.startSearch!click!startClick"] = true;
+    $.__views.__alloyId1 = Ti.UI.createImageView({
+        image: "/images/emoticaptcha_logo.png",
+        bottom: "20dp",
+        id: "__alloyId1"
+    });
+    $.__views.home.add($.__views.__alloyId1);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var quasarlib = require("quasarlib");
-    var parsedData = [];
-    var onSucces = function(data) {
-        var row;
-        var rows = [];
-        rawData = JSON.parse(data);
-        parsedData = rawData["job_postings"];
-        parsedData.forEach(function(job) {
-            var payload = {
-                title: job.title,
-                summary: job.employer_name,
-                thumb: "http://www.employmentguide.com/company_images/1076__150x60_PlaceHolderBanner.gif",
-                id: job.id,
-                description: job.description,
-                posted_at: job.posted_at,
-                city: job.city,
-                state: job.state,
-                zip: job.zip,
-                company_id: job.company_id,
-                apply_url: job.apply_url
-            };
-            row = Alloy.createController("jobs.row", payload).getView();
-            rows.push(row);
-        });
-        $.jobslist.data = rows;
-    };
-    var onError = function(error) {
-        console.log(error);
-    };
-    var dataURL = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=KGTTnbzgbAC1gzTaVZjs&site_of_origin=ORION&page=2";
-    quasarlib.getTableData(dataURL, onSucces, onError);
     $.home.open();
-    __defers["$.__views.jobslist!click!rowClick"] && $.__views.jobslist.addEventListener("click", rowClick);
+    __defers["$.__views.startSearch!click!startClick"] && $.__views.startSearch.addEventListener("click", startClick);
     _.extend($, exports);
 }
 

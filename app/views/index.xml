@@ -1,7 +1,10 @@
 <Alloy>
 	<Window id="home" class="container">
-		<View id="content">
-			<TableView id="jobslist" onClick="rowClick"/>
+		<View id="welcome">
+			<Label>Welcome to Emoticaptcha!</Label>
+			<Button id="startSearch" onClick="startClick" />
 		</View>
+		<ImageView image="/images/emoticaptcha_logo.png" bottom="20dp">
+		</ImageView>
 	</Window>
 </Alloy>
