@@ -23,20 +23,20 @@
 	top: "44dp",
 	width: "320dp",
 	backgroundColor: "8cacb7",
-	font: {fontFamily: "arial", fontSize:"16dp" fontColor: "04212b"}
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
 "#detailView" : {
 	layout: "vertical",
 	left: "10dp",
 	width: "310dp",
 	backgroundColor: "8cacb7",
-	font: {fontFamily: "arial", fontSize:"16dp" fontColor: "04212b"}
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 
 },
 "#description" : {
 	backgroundColor: "8cacb7",
-	font: {fontFamily: "arial", fontSize:"16dp" fontColor: "04212b"}
+	font: {fontFamily: "arial", fontSize:"16dp", fontColor: "04212b"}
 },
 "#sendIcon":{
-	font: {fontFamily: "arial", fontSize:"16dp" fontColor: "04212b"}
+	font: {fontFamily: 'AppIcons', fontSize:'24dp', fontColor: "04212b"}
 }
